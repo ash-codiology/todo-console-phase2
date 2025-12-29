@@ -1,55 +1,68 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!-- SYNC IMPACT REPORT:
+Version change: N/A (initial creation) → 1.0.0
+Modified principles: N/A
+Added sections: All principles and sections as specified for MedTrack Todo Agent
+Removed sections: N/A
+Templates requiring updates:
+  - .specify/templates/plan-template.md ✅ updated
+  - .specify/templates/spec-template.md ✅ updated
+  - .specify/templates/tasks-template.md ✅ updated
+  - .specify/templates/commands/*.md ⚠ pending
+  - README.md ⚠ pending
+Follow-up TODOs: None
+-->
+# MedTrack Todo Agent Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Patient-Centric Design
+Every feature and interaction must prioritize patient safety, clarity, and ease of use. All functionality must be justified from a real-world healthcare perspective, ensuring the system serves patient needs above technical sophistication.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### Agentic Spec-Driven Development
+Follow the Agentic Dev Stack workflow: Write specification → Generate implementation plan → Break plan into tasks → Implement tasks via Claude Code. No manual coding by humans; all behavior must originate from written specifications.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Clean Architecture & Separation of Concerns
+Maintain clear separation of concerns following clean architecture principles. Design with future cloud-native, distributed, and AI evolution in mind while keeping Phase I fully in-memory with no persistence.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Progressive Evolution
+Start simple and evolve complexity gradually. Every design decision must support long-term evolution from CLI to distributed cloud-native AI systems. Optimize for clarity, safety, and extensibility.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### In-Memory First (Phase I)
+Keep Phase I fully in-memory with no database or persistence. Use Python 3.13+ with UV for environment management. Follow clean project structure with /src for source code and /specs-history for all specifications.
 
-### [PRINCIPLE_6_NAME]
+### Healthcare Usability Standards
+Implement menu-driven interface with numeric choices only. Use clear, patient-friendly language avoiding technical terms. Ensure View/List option clearly shows all tasks with status indicators. Include motivational elements to encourage adherence.
 
+## Non-Functional Requirements
 
-[PRINCIPLE__DESCRIPTION]
+Technology Stack: Python 3.13+, UV for environment management
+Project Structure: /src for source code, /specs-history for specifications
+Code Quality: Readable, modular, maintainable code following clean principles
+Phase I Constraints: No external services or databases, in-memory only
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Development Workflow
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### Implementation Process
+1. Write detailed specifications before any implementation
+2. Generate implementation plans from specifications
+3. Break plans into testable tasks
+4. Implement tasks via Claude Code without manual boilerplate writing
+5. Maintain clear separation between business logic and technical implementation
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### Quality Standards
+- All features must be justified from healthcare perspective
+- Code must be readable and maintainable
+- Every design decision supports long-term evolution
+- Clear specification history must be maintained
+- Architecture must naturally evolve into distributed AI system
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### Feature Requirements
+Each task must minimally contain: Unique ID, Title, Description, Completion status
+Mandatory features: Add Task, View Task List, Update Task, Delete Task, Mark Task as Complete/Incomplete
+Definition of a Task: Patient health action (taking medicine dose, completing health-related activity)
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes all other development practices for the MedTrack Todo Agent project. All implementation must comply with these principles. Amendments require explicit documentation, approval, and migration planning. All development activities must verify compliance with patient-centric design and agentic spec-driven development workflows.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-29 | **Last Amended**: 2025-12-29

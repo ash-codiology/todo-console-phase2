@@ -1,0 +1,9 @@
+[project]
+name = "medtrack-todo-agent"
+version = "0.1.0"
+description = "MedTrack Todo Agent - Patient-Centric Medication & Care Todo System"
+requires-python = ">=3.13"
+dependencies = []
+
+[tool.uv]
+dev-dependencies = []
