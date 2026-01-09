@@ -33,6 +33,28 @@
 
 [PRINCIPLE__DESCRIPTION]
 
+## Technology Stack Matrix
+
+### Phase I: In-memory console application only
+- Backend: In-memory console application
+- Database: None (in-memory only)
+- Frontend: None
+- Authentication: Not allowed
+- Architecture: Console application
+
+### Phase II: Full-stack web application
+- Backend: Python REST API
+- Database: Neon Serverless PostgreSQL
+- ORM/Data layer: SQLModel or equivalent
+- Frontend: Next.js (React, TypeScript)
+- Authentication: Better Auth (signup/signin)
+- Architecture: Full-stack web application
+- **Rules**: Authentication, web frontend, and Neon PostgreSQL are allowed starting Phase II
+
+### Phase III and later: Advanced cloud infrastructure, agents, AI, orchestration
+- Advanced cloud infrastructure, agents, AI, orchestration
+- **Rules**: No AI or agent frameworks until later phases
+
 ## [SECTION_2_NAME]
 <!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
 
