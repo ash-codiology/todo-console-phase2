@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "todo-backend"
+version = "0.1.0"
+description = "Todo API backend with FastAPI"
+authors = ["Ashfa Shakeel <ash-codiology@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "0.104.1"
+uvicorn = {extras = ["standard"], version = "0.24.0"}
+sqlmodel = "0.0.16"
+pydantic = "2.5.0"
+pydantic-settings = "2.0.3"
+python-multipart = "0.0.6"
+passlib = {extras = ["bcrypt"], version = "1.7.4"}
+python-jose = {extras = ["cryptography"], version = "3.3.0"}
+python-dotenv = "1.0.0"
+psycopg2-binary = "^2.9.9"
+better-exceptions = "0.3.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.vercel]
+include_files = ["src/**"]

@@ -1,14 +1,13 @@
 # Todo Console App - Phase 2
 
 This is a full-stack todo application with:
-- Backend: FastAPI server running on port 8000
-- Frontend: Next.js application deployed on GitHub Pages
+- Backend: FastAPI server
+- Frontend: Next.js application
 
-## GitHub Pages Deployment
+## Deployments
 
-The frontend is deployed at: https://ash-codiology.github.io/todo-console-phase2/
-
-Note: Make sure your backend API is accessible at the configured endpoint for full functionality.
+- **Frontend**: Deployed on GitHub Pages at: https://ash-codiology.github.io/todo-console-phase2/
+- **Backend**: Deployed on Vercel (instructions below)
 
 ## Overview
 
@@ -26,8 +25,27 @@ This is a modern web application featuring user authentication and todo manageme
 The application follows a modern full-stack architecture:
 - **Backend**: FastAPI with SQLModel and PostgreSQL
 - **Frontend**: Next.js with TypeScript and Tailwind CSS
-- **Deployment**: Backend deployed separately, Frontend on GitHub Pages
+- **Deployment**: Backend on Vercel, Frontend on GitHub Pages
 
-## Deployment Status
+## Backend Deployment to Vercel
 
-Last deployed: January 2026
+To deploy the backend to Vercel:
+
+1. Navigate to the backend directory: `cd backend`
+2. Install the Vercel CLI: `npm i -g vercel`
+3. Login to Vercel: `vercel login`
+4. Deploy the backend: `vercel --cwd backend`
+
+The backend will be deployed with the proper configuration for FastAPI.
+
+## Frontend Deployment to GitHub Pages
+
+The frontend is built and ready for GitHub Pages deployment:
+
+1. Go to your GitHub repository settings
+2. Click on "Pages" in the sidebar
+3. Select "Deploy from a branch"
+4. Choose "gh-pages" branch and "/" folder
+5. Click "Save"
+
+The frontend will then be accessible at: https://ash-codiology.github.io/todo-console-phase2/
