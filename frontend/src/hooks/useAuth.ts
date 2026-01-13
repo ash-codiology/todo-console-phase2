@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext, useContext } from 'react';
+import React, { useState, useEffect, createContext, useContext } from 'react';
 import { apiService } from '../services/api';
 
 interface User {
@@ -89,9 +89,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     signOut
   };
 
-  return (
-    React.createElement(AuthContext.Provider, { value: value },
-      children
-    )
+  return React.createElement(
+    AuthContext.Provider,
+    { value },
+    children
   );
 };

@@ -2,9 +2,19 @@
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
 
-interface ApiResponse<T> {
-  data: T;
-  success: boolean;
+interface AuthResponse {
+  access_token: string;
+  token_type: string;
+  user_id: string;
+}
+
+interface Todo {
+  id: string;
+  title: string;
+  description?: string;
+  completed: boolean;
+  created_at: string;
+  updated_at: string;
 }
 
 class ApiService {
@@ -72,15 +82,15 @@ class ApiService {
   }
 
   // Auth methods
-  async signup(email: string, password: string) {
-    return this.request('/auth/signup', {
+  async signup(email: string, password: string): Promise<AuthResponse> {
+    return this.request<AuthResponse>('/auth/signup', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
     });
   }
 
-  async signin(email: string, password: string) {
-    const response = await this.request('/auth/signin', {
+  async signin(email: string, password: string): Promise<AuthResponse> {
+    const response = await this.request<AuthResponse>('/auth/signin', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
     });
@@ -94,36 +104,36 @@ class ApiService {
   }
 
   // Todo methods
-  async getTodos() {
-    return this.request('/todos');
+  async getTodos(): Promise<Todo[]> {
+    return this.request<Todo[]>('/todos');
   }
 
-  async getTodo(id: string) {
-    return this.request(`/todos/${id}`);
+  async getTodo(id: string): Promise<Todo> {
+    return this.request<Todo>(`/todos/${id}`);
   }
 
-  async createTodo(title: string, description?: string) {
-    return this.request('/todos', {
+  async createTodo(title: string, description?: string): Promise<Todo> {
+    return this.request<Todo>('/todos', {
       method: 'POST',
       body: JSON.stringify({ title, description }),
     });
   }
 
-  async updateTodo(id: string, title?: string, description?: string, completed?: boolean) {
-    return this.request(`/todos/${id}`, {
+  async updateTodo(id: string, title?: string, description?: string, completed?: boolean): Promise<Todo> {
+    return this.request<Todo>(`/todos/${id}`, {
       method: 'PUT',
       body: JSON.stringify({ title, description, completed }),
     });
   }
 
-  async deleteTodo(id: string) {
-    return this.request(`/todos/${id}`, {
+  async deleteTodo(id: string): Promise<void> {
+    return this.request<void>(`/todos/${id}`, {
       method: 'DELETE',
     });
   }
 
-  async toggleTodoCompletion(id: string) {
-    return this.request(`/todos/${id}/toggle`, {
+  async toggleTodoCompletion(id: string): Promise<Todo> {
+    return this.request<Todo>(`/todos/${id}/toggle`, {
       method: 'PATCH',
     });
   }
