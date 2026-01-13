@@ -27,3 +27,7 @@ The application follows a modern full-stack architecture:
 - **Backend**: FastAPI with SQLModel and PostgreSQL
 - **Frontend**: Next.js with TypeScript and Tailwind CSS
 - **Deployment**: Backend deployed separately, Frontend on GitHub Pages
+
+## Deployment Status
+
+Last deployed: January 2026
