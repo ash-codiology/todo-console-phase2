@@ -1,6 +1,6 @@
 // Base API service for communication with backend
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://todo-console-phase2.vercel.app/api';
 
 interface AuthResponse {
   access_token: string;
