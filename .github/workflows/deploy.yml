@@ -28,10 +28,7 @@ jobs:
       working-directory: frontend
 
     - name: Export static site
-      run: |
-        npm run build
-        cd out
-        echo "todo-console-phase2.pages.dev" > CNAME
+      run: npm run export
       working-directory: frontend
 
     - name: Deploy to GitHub Pages
