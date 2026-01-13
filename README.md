@@ -1,76 +1,29 @@
-# MedTrack Todo Agent
+# Todo Console App - Phase 2
 
-A patient-centric medication and health task management CLI application designed to help patients manage medication adherence and health-related tasks.
+This is a full-stack todo application with:
+- Backend: FastAPI server running on port 8000
+- Frontend: Next.js application deployed on GitHub Pages
+
+## GitHub Pages Deployment
+
+The frontend is deployed at: https://ash-codiology.github.io/todo-console-phase2/
+
+Note: Make sure your backend API is accessible at the configured endpoint for full functionality.
 
 ## Overview
 
-MedTrack Todo is a console-based application that allows patients to track their medication doses and health-related activities. The application provides a simple, user-friendly interface focused on medication adherence and health management.
+This is a modern web application featuring user authentication and todo management capabilities. The application consists of a backend API built with FastAPI and a frontend built with Next.js.
 
 ## Features
 
-- **Add Tasks**: Create new medication or health tasks with titles and descriptions
-- **View Tasks**: Display all tasks in a tabular format with status indicators
-- **Update Tasks**: Modify existing task details
-- **Delete Tasks**: Remove tasks that are no longer needed
-- **Mark Complete/Incomplete**: Track medication adherence by toggling task status
-- **Motivational Messages**: Receive encouraging health quotes upon exit
-
-## Advanced Attributes (Future Features)
-
-The application stores additional attributes for future functionality:
-- Priority levels (high/medium/low)
-- Category classification (home/work/health/exercise)
-- Due dates and reminder times
-- Recurring task patterns
-
-## Installation
-
-1. Clone the repository
-2. Ensure Python 3.13+ is installed
-3. Navigate to the project directory
-
-## Usage
-
-Run the application with:
-```bash
-python -m src.medtrack_todo.main
-```
-
-The application will present a menu with the following options:
-1. Add Task
-2. View Task List
-3. Update Task
-4. Delete Task
-5. Mark Task Complete / Incomplete
-6. Exit
+- **Authentication**: Sign up and sign in functionality
+- **Todo Management**: Create, read, update, and delete todos
+- **Responsive UI**: Modern UI built with React and Tailwind CSS
+- **API Integration**: Full integration with backend API
 
 ## Architecture
 
-The application follows a clean architecture pattern:
-- **Models**: Task data model with all attributes
-- **Services**: Business logic for task operations
-- **Utils**: Validation and helper functions
-- **CLI**: User interface in main.py
-
-## Data Model
-
-Each task contains:
-- ID: Unique identifier
-- Title: Task name
-- Description: Details about the task
-- Status: Pending or Completed
-- Priority: High/Medium/Low
-- Category: Home/Work/Health/Exercise
-- Due date: Optional due date
-- Reminder time: Optional reminder
-- Recurrence pattern: Optional recurrence
-- Creation timestamp
-- Completion timestamp
-
-## Contributing
-
-This project follows a spec-driven development approach. All changes should be made following the established patterns in the codebase.
-
-## License
-
-This project is part of the "The Evolution of Todo" series, demonstrating the progression from CLI to distributed cloud-native AI systems.
+The application follows a modern full-stack architecture:
+- **Backend**: FastAPI with SQLModel and PostgreSQL
+- **Frontend**: Next.js with TypeScript and Tailwind CSS
+- **Deployment**: Backend deployed separately, Frontend on GitHub Pages
