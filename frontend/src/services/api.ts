@@ -15,12 +15,10 @@ class ApiService {
   }
 
   async request<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
-    // Ensure we have a token, if not try to retrieve it from localStorage
-    if (!this.token) {
-      const token = localStorage.getItem('token') || localStorage.getItem('access_token');
-      if (token) {
-        this.token = token;
-      }
+    // Always get the most recent token from localStorage
+    const token = localStorage.getItem('token') || localStorage.getItem('access_token');
+    if (token) {
+      this.token = token; // Update internal token for consistency
     }
 
     const url = `${API_BASE_URL}${endpoint}`;
@@ -30,8 +28,8 @@ class ApiService {
       ...options.headers,
     } as Record<string, string>;
 
-    if (this.token) {
-      headers['Authorization'] = `Bearer ${this.token}`;
+    if (token) { // Use the token from localStorage directly
+      headers['Authorization'] = `Bearer ${token}`;
     }
 
     const config: RequestInit = {
@@ -46,9 +44,9 @@ class ApiService {
         // If we get a 401 Unauthorized, try to refresh the token from localStorage and retry
         if (response.status === 401) {
           const newToken = localStorage.getItem('token') || localStorage.getItem('access_token');
-          if (newToken && newToken !== this.token) {
+          if (newToken && newToken !== token) { // Compare with the token used in this request
             this.token = newToken;
-            headers['Authorization'] = `Bearer ${this.token}`;
+            headers['Authorization'] = `Bearer ${newToken}`;
 
             // Retry the request with the new token
             const retryResponse = await fetch(url, { ...config, headers });

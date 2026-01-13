@@ -100,19 +100,18 @@ const DashboardPage: React.FC = () => {
   }
 
   return (
-    <div className="flex h-screen bg-gradient-to-br from-indigo-50 to-yellow-50">
+    <div className="flex h-screen bg-teal-50">
       <Sidebar user={user} />
       <div className="flex-1 flex flex-col overflow-hidden">
-        {/* Add a top bar with signout button */}
-        <div className="bg-white shadow-sm border-b border-gray-200 p-4 flex justify-between items-center">
-          <h1 className="text-xl font-semibold text-gray-800">Dashboard</h1>
+        {/* Top bar with signout button */}
+        <div className="bg-white/80 backdrop-blur-sm shadow-sm border-b border-teal-100 p-4 flex justify-between items-center">
+          <h1 className="text-xl font-medium text-gray-700">Dashboard</h1>
           <button
             onClick={() => {
-              // Call the signout function from the auth context
               signOut();
               router.push('/signin');
             }}
-            className="flex items-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg hover:from-yellow-600 hover:to-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition duration-200 shadow-md"
+            className="flex items-center px-4 py-2 text-sm font-medium text-white bg-slate-700 rounded-lg hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-500 transition duration-200 shadow-sm"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
@@ -123,57 +122,57 @@ const DashboardPage: React.FC = () => {
         <main className="flex-1 overflow-y-auto p-6">
           <div className="max-w-6xl mx-auto">
             <div className="mb-8">
-              <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
+              <h1 className="text-3xl font-light text-gray-800">Dashboard</h1>
               <p className="text-gray-600 mt-2">Welcome back, {user.email.split('@')[0]}! Here's your task overview.</p>
             </div>
 
             {/* Stats Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+              <div className="bg-white/70 backdrop-blur-sm rounded-2xl shadow-sm p-6 border border-teal-100">
                 <div className="flex items-center">
-                  <div className="p-3 bg-yellow-100 rounded-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="p-3 bg-teal-100 rounded-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 002 2h2a2 2 0 002-2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-2xl font-bold text-gray-900">{todos.length}</h3>
+                    <h3 className="text-2xl font-light text-gray-800">{todos.length}</h3>
                     <p className="text-gray-600">Total Tasks</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+              <div className="bg-white/70 backdrop-blur-sm rounded-2xl shadow-sm p-6 border border-teal-100">
                 <div className="flex items-center">
-                  <div className="p-3 bg-yellow-100 rounded-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="p-3 bg-teal-100 rounded-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-2xl font-bold text-gray-900">{completedCount}</h3>
+                    <h3 className="text-2xl font-light text-gray-800">{completedCount}</h3>
                     <p className="text-gray-600">Completed</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+              <div className="bg-white/70 backdrop-blur-sm rounded-2xl shadow-sm p-6 border border-teal-100">
                 <div className="flex items-center">
-                  <div className="p-3 bg-yellow-100 rounded-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="p-3 bg-teal-100 rounded-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-teal-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-2xl font-bold text-gray-900">{pendingCount}</h3>
+                    <h3 className="text-2xl font-light text-gray-800">{pendingCount}</h3>
                     <p className="text-gray-600">Pending</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-              <div className="p-6 border-b border-gray-200 flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
+            <div className="bg-white/70 backdrop-blur-sm rounded-2xl shadow-sm border border-teal-100 overflow-hidden">
+              <div className="p-6 border-b border-teal-100 flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
                 <div className="flex-1 w-full">
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -186,14 +185,14 @@ const DashboardPage: React.FC = () => {
                       placeholder="Search tasks..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition duration-200"
+                      className="block w-full pl-10 pr-3 py-3 border border-teal-200 rounded-xl focus:ring-2 focus:ring-teal-400 focus:border-teal-400 transition duration-200 bg-white/50"
                     />
                   </div>
                 </div>
                 <div className="mt-4 md:mt-0 md:ml-4">
                   <button
                     onClick={() => router.push('/dashboard/create')}
-                    className="flex items-center px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-medium rounded-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 shadow-md"
+                    className="flex items-center px-6 py-3 bg-slate-700 text-white font-medium rounded-xl hover:bg-slate-800 transition-all duration-200 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-slate-400 shadow-sm"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -205,7 +204,7 @@ const DashboardPage: React.FC = () => {
 
               {loadingTodos ? (
                 <div className="p-12 text-center">
-                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto"></div>
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600 mx-auto"></div>
                   <p className="text-gray-600 mt-4">Loading tasks...</p>
                 </div>
               ) : filteredTodos.length === 0 ? (
@@ -213,15 +212,15 @@ const DashboardPage: React.FC = () => {
                   <svg className="mx-auto h-16 w-16 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 002 2h2a2 2 0 002-2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                   </svg>
-                  <h3 className="mt-4 text-lg font-medium text-gray-900">No tasks found</h3>
-                  <p className="mt-2 text-gray-500">
+                  <h3 className="mt-4 text-lg font-medium text-gray-800">No tasks found</h3>
+                  <p className="mt-2 text-gray-600">
                     {searchTerm ? 'No tasks match your search.' : 'Get started by creating a new task.'}
                   </p>
                   {!searchTerm && (
                     <div className="mt-6">
                       <button
                         onClick={() => router.push('/dashboard/create')}
-                        className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+                        className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-slate-700 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400 shadow-sm transition-all duration-200 hover:scale-[1.02]"
                       >
                         Create your first task
                       </button>
@@ -229,25 +228,25 @@ const DashboardPage: React.FC = () => {
                   )}
                 </div>
               ) : (
-                <ul className="divide-y divide-gray-200">
+                <ul className="divide-y divide-teal-100">
                   {filteredTodos.map((todo) => (
-                    <li key={todo.id} className="p-6 hover:bg-yellow-50 transition duration-150">
+                    <li key={todo.id} className="p-6 hover:bg-teal-50/50 transition duration-200 ease-in-out">
                       <div className="flex items-start">
                         <input
                           type="checkbox"
                           checked={todo.completed}
                           onChange={() => handleToggleTodo(todo.id)}
-                          className="h-5 w-5 mt-1 text-yellow-600 rounded focus:ring-yellow-500"
+                          className="h-5 w-5 mt-1 text-teal-600 rounded focus:ring-teal-400 border-teal-300"
                         />
                         <div className="ml-4 flex-1 min-w-0">
                           <div className="flex items-center justify-between">
-                            <h3 className={`text-lg font-medium ${todo.completed ? 'line-through text-gray-500' : 'text-gray-900'}`}>
+                            <h3 className={`text-lg font-normal ${todo.completed ? 'line-through text-gray-500' : 'text-gray-800'}`}>
                               {todo.title}
                             </h3>
                             <div className="flex space-x-2">
                               <button
                                 onClick={() => handleEditTodo(todo.id)}
-                                className="text-yellow-600 hover:text-yellow-800 text-sm font-medium flex items-center"
+                                className="text-teal-600 hover:text-teal-800 text-sm font-medium flex items-center transition-colors duration-200"
                               >
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -256,7 +255,7 @@ const DashboardPage: React.FC = () => {
                               </button>
                               <button
                                 onClick={() => handleDeleteTodo(todo.id)}
-                                className="text-red-600 hover:text-red-900 text-sm font-medium flex items-center"
+                                className="text-red-500 hover:text-red-700 text-sm font-medium flex items-center transition-colors duration-200"
                               >
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
@@ -277,7 +276,7 @@ const DashboardPage: React.FC = () => {
                             <span>Created: {new Date(todo.created_at).toLocaleDateString()}</span>
                           </div>
                           {todo.completed && (
-                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 mt-2">
+                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-teal-100 text-teal-800 mt-2">
                               Completed
                             </span>
                           )}
@@ -292,9 +291,9 @@ const DashboardPage: React.FC = () => {
         </main>
 
         {/* Footer */}
-        <footer className="py-4 bg-gradient-to-r from-yellow-600 to-yellow-700 text-white text-center text-sm">
+        <footer className="py-4 bg-teal-100 text-gray-700 text-center text-sm">
           <div className="container mx-auto">
-            <p>All rights to tabsheera shakeel</p>
+            <p>© {new Date().getFullYear()} Ashfa Shakeel. All rights reserved.</p>
           </div>
         </footer>
       </div>
